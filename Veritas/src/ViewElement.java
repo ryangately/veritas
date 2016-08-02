@@ -22,6 +22,8 @@ public class ViewElement extends JPanel {
 	private ViewElementDecision decisionView;
 	private ViewElementPointer pointerView;
 	private ViewElementLogic logicView;
+	private ViewElementToggle toggleView;
+	private ViewElementExploration exploreView;
 	
 	private ModelSceneElement element;
 	private ModelStory story;
@@ -43,11 +45,15 @@ public class ViewElement extends JPanel {
 		decisionView = new ViewElementDecision(null);
 		pointerView = new ViewElementPointer();
 		logicView = new ViewElementLogic();
+		toggleView = new ViewElementToggle();
+		exploreView = new ViewElementExploration();
 		
 		cards.add(beatView, "beat");
 		cards.add(decisionView, "decision");
 		cards.add(pointerView, "pointer");
 		cards.add(logicView, "logic");
+		cards.add(toggleView, "toggle");
+		cards.add(exploreView, "explore");
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		this.add(namePanel);
@@ -126,6 +132,18 @@ public class ViewElement extends JPanel {
 			logicView.setScene(scene);
 			logicView.setElement((ModelLogic) e);
 			cl.show(cards, "logic");
+		}
+		else if (e instanceof ModelToggle) {
+			toggleView.setStory(story);
+			toggleView.setScene(scene);
+			toggleView.setElement((ModelToggle) e);
+			cl.show(cards, "toggle");
+		}
+		else if (e instanceof ModelExploration) {
+			exploreView.setStory(story);
+			exploreView.setScene(scene);
+			exploreView.setElement((ModelExploration) e);
+			cl.show(cards, "explore");
 		}
 	}
 	

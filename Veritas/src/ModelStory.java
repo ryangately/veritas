@@ -76,6 +76,11 @@ public class ModelStory implements Serializable {
 		explorationObjects.add(eo);
 	}
 	
+	// adds an exploration object image to the internal db using an existing file
+	public void addExploreFromFile(BufferedImage img, String name) throws IOException {
+		explorationObjects.add(new ModelNamedImage(img, name));
+	}
+	
 	// adds a scene to the internal db
 	public void addScene(ModelScene scene) {
 		scenes.add(scene);
@@ -206,6 +211,14 @@ public class ModelStory implements Serializable {
 		return backgroundListModel;
 	}
 	
+	public DefaultListModel<String> getExplorationList() {
+		DefaultListModel<String> explorationListModel = new DefaultListModel<String>();
+		for (int i = 0; i < explorationObjects.size(); ++i) {
+			explorationListModel.addElement(explorationObjects.get(i).getName());
+		}
+		return explorationListModel;
+	}
+	
 	public DefaultListModel<String> getSceneList() {
 		DefaultListModel<String> sceneList = new DefaultListModel<String>();
 		for (int i = 0; i < scenes.size(); ++i) {
@@ -262,6 +275,15 @@ public class ModelStory implements Serializable {
 			counterList.addElement(counters.get(i).getName());
 		}
 		return counterList;
+	}
+	
+	public DefaultComboBoxModel<String> getExploreBoxList() {
+		DefaultComboBoxModel<String> exploreList = new DefaultComboBoxModel<String>();
+		exploreList.addElement("None");
+		for (int i = 0; i < explorationObjects.size(); ++i) {
+			exploreList.addElement(explorationObjects.get(i).getName());
+		}
+		return exploreList;
 	}
 
 }

@@ -21,6 +21,7 @@ public class ViewMain {
 	private JMenuItem fileMenuNew;
 	private JMenuItem fileMenuOpen;
 	private JMenuItem fileMenuSave;
+	private JMenuItem fileMenuDebugSave;
 	
 	// story menu
 	private JMenu storyMenu;
@@ -44,9 +45,11 @@ public class ViewMain {
 		fileMenuNew = new JMenuItem("New Story");
 		fileMenuOpen = new JMenuItem("Open");
 		fileMenuSave = new JMenuItem("Save");
+		fileMenuDebugSave = new JMenuItem("Debug Save");
 		fileMenu.add(fileMenuNew);
 		fileMenu.add(fileMenuOpen);
 		fileMenu.add(fileMenuSave);
+		fileMenu.add(fileMenuDebugSave);
 		
 		// story menu
 		storyMenu = new JMenu("Story");
@@ -83,6 +86,10 @@ public class ViewMain {
 	
 	public JMenuItem getFileMenuSave() {
 		return fileMenuSave;
+	}
+	
+	public JMenuItem getFileMenuDebugSave() {
+		return fileMenuDebugSave;
 	}
 	
 	public JMenuItem getFileMenuOpen() {

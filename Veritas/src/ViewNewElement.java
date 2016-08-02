@@ -62,6 +62,14 @@ public class ViewNewElement extends JDialog {
 					scene.addElement(new ModelLogic(nameField.getText()));
 					dispose();
 				}
+				else if (typeBox.getSelectedItem().equals("Toggle")) {
+					scene.addElement(new ModelToggle(nameField.getText()));
+					dispose();
+				}
+				else if (typeBox.getSelectedItem().equals("Explore")) {
+					scene.addElement(new ModelExploration(nameField.getText()));
+					dispose();
+				}
 			}
 		}
 	}
@@ -92,6 +100,8 @@ public class ViewNewElement extends JDialog {
 		typeBoxModel.addElement("Decision");
 		typeBoxModel.addElement("Pointer");
 		typeBoxModel.addElement("Logic");
+		typeBoxModel.addElement("Toggle");
+		typeBoxModel.addElement("Explore");
 		typeBox.setModel(typeBoxModel);
 		
 		// build gui

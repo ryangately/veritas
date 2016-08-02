@@ -42,6 +42,14 @@ public class ViewStoryVariables extends JFrame {
 	private JButton counterAddBtn;
 	private JButton counterDelBtn;
 	
+	// string panel
+	private JPanel stringPanel;
+	private JScrollPane stringScrollPane;
+	private JList stringList;
+	private JPanel stringBtnPanel;
+	private JButton stringAddBtn;
+	private JButton stringDelBtn;
+	
 	public ViewStoryVariables(ModelStory s) {
 		story = s;
 		this.setTitle(TITLE);

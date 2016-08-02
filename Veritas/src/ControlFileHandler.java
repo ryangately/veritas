@@ -312,6 +312,13 @@ public class ControlFileHandler {
 							+ "\r\ncompareindex=" + ((ModelLogic) element).getIndex()
 							+ "\r\nvalcomparison=" + ((ModelLogic) element).getValComparison());
 				}
+				else if (element instanceof ModelExploration) {
+					output.append("exploration"
+							+ "\r\nelementname=" + element.getName()
+							+ "\r\nnextscene=" + element.getNext()
+							+ "\r\nexploreobjectcount=" + ((ModelExploration) element).getObjectCount()
+							);
+				}
 				output.append("\r\n</element>");
 			}
 			

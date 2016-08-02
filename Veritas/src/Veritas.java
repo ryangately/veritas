@@ -27,7 +27,7 @@ import javax.swing.event.ListSelectionListener;
 public class Veritas {
 	
 	// class vars
-	final private String VERSION = "Veritas v0.5.421";
+	final private String VERSION = "Veritas v0.6.801";
 	private Veritas veritas;
 	private ViewMain viewMain;
 	
@@ -41,6 +41,7 @@ public class Veritas {
 	// components with listeners
 	private JMenuItem menuNew;
 	private JMenuItem menuSave;
+	private JMenuItem menuDebugSave;
 	private JMenuItem menuOpen;
 	private JMenuItem menuSettings;
 	private JMenuItem menuImages;
@@ -102,6 +103,7 @@ public class Veritas {
 		viewMain = new ViewMain(VERSION);
 		menuNew = viewMain.getFileMenuNew();
 		menuSave = viewMain.getFileMenuSave();
+		menuDebugSave = viewMain.getFileMenuDebugSave();
 		menuOpen = viewMain.getFileMenuOpen();
 		menuSettings = viewMain.getStoryMenuSettings();
 		menuImages = viewMain.getStoryMenuImages();
@@ -229,6 +231,7 @@ public class Veritas {
 		
 		// menu item listeners
 		menuSave.addActionListener(new SaveStoryListener());
+		//menuDebugSave.addActionListener(l);
 		menuOpen.addActionListener(new LoadStoryListener());
 		menuSettings.addActionListener(new StorySettingsListener());
 		menuImages.addActionListener(new StoryImagesListener());

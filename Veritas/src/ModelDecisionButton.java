@@ -10,6 +10,8 @@ public class ModelDecisionButton extends JButton {
 	public ModelDecisionButton(int id) {
 		//this.setBorder(BorderFactory.createEmptyBorder());
 		this.setContentAreaFilled(false);
+		this.setBorderPainted(false);
+		this.setOpaque(false);
 		this.setHorizontalAlignment(LEFT);
 		decisionId = id;
 	}

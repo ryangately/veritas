@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Game {
 	
-	final private String VERSION = "Vino v0.61";
+	final private String VERSION = "Vino v0.61 (GenCon)";
 	private ViewPlay viewPlay;
 	private ModelStory story;
 	private ModelScene currentScene;
