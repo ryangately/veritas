@@ -1,9 +1,10 @@
 
 public class ModelToggle extends ModelSceneElement {
 	
-	private int type; // 0 for bool, 1 for set, 2 for increment, 3 for decrement
+	private int type; // 0 for bool, 1 for set, 2 for increment, 3 for decrement, 4 for string
 	private Boolean newBoolVal;
 	private int newIntVal;
+	private String newStringVal;
 	private int index; // location of switch
 	
 	public ModelToggle(String name) {
@@ -11,6 +12,8 @@ public class ModelToggle extends ModelSceneElement {
 		type = -1;
 		newBoolVal = null;
 		newIntVal = -1;
+		newStringVal = null;
+		index = 0;
 	}
 	
 	/** MUTATORS */
@@ -18,6 +21,7 @@ public class ModelToggle extends ModelSceneElement {
 		type = 0;
 		newBoolVal = val;
 		newIntVal = -1;
+		newStringVal = null;
 		this.index = index;
 	}
 	
@@ -25,6 +29,7 @@ public class ModelToggle extends ModelSceneElement {
 		type = 1;
 		newIntVal = val;
 		newBoolVal = null;
+		newStringVal = null;
 		this.index = index;
 	}
 	
@@ -32,6 +37,7 @@ public class ModelToggle extends ModelSceneElement {
 		type = 2;
 		newBoolVal = null;
 		newIntVal = -1;
+		newStringVal = null;
 		this.index = index;
 	}
 	
@@ -39,6 +45,15 @@ public class ModelToggle extends ModelSceneElement {
 		type = 3;
 		newBoolVal = null;
 		newIntVal = -1;
+		newStringVal = null;
+		this.index = index;
+	}
+	
+	public void setString(String value, int index) {
+		type = 4;
+		newBoolVal = null;
+		newIntVal = -1;
+		newStringVal = value;
 		this.index = index;
 	}
 	
@@ -57,6 +72,10 @@ public class ModelToggle extends ModelSceneElement {
 	
 	public int getIndex() {
 		return index;
+	}
+	
+	public String getNewString() {
+		return newStringVal;
 	}
 
 }

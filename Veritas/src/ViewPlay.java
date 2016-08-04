@@ -304,6 +304,8 @@ public class ViewPlay {
 		explorationFive.setVisible(false);
 		explorationSix.setVisible(false);
 		leftActorLabel.setVisible(true);
+		midActorLabel.setVisible(true);
+		rightActorLabel.setVisible(true);
 		textPaneLabel.setVisible(true);
 		textLabel.setVisible(true);
 		speakerLabel.setVisible(true);

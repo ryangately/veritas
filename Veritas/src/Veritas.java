@@ -27,7 +27,7 @@ import javax.swing.event.ListSelectionListener;
 public class Veritas {
 	
 	// class vars
-	final private String VERSION = "Veritas v0.6.801";
+	final private String VERSION = "Veritas v0.7.803";
 	private Veritas veritas;
 	private ViewMain viewMain;
 	

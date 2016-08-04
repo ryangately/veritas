@@ -21,6 +21,7 @@ public class ModelStory implements Serializable {
 	private ArrayList<ModelScene> scenes;
 	private ArrayList<ModelSwitch> switches;
 	private ArrayList<ModelCounter> counters;
+	private ArrayList<ModelStringVar> stringVars;
 	private int startPoint;
 	
 	// constructor
@@ -32,6 +33,7 @@ public class ModelStory implements Serializable {
 		scenes = new ArrayList<ModelScene>();
 		switches = new ArrayList<ModelSwitch>();
 		counters = new ArrayList<ModelCounter>();
+		stringVars = new ArrayList<ModelStringVar>();
 		startPoint = 0;
 		actors.add(new ModelNamedImage("images/empty.png", "Empty"));
 	}
@@ -101,6 +103,11 @@ public class ModelStory implements Serializable {
 		counters.add(c);
 	}
 	
+	// adds a string variable to the internal db
+	public void addStringVar(ModelStringVar s) {
+		stringVars.add(s);
+	}
+	
 	// sets the title of the story
 	public void setTitle(String title) {
 		this.title = title;
@@ -134,6 +141,10 @@ public class ModelStory implements Serializable {
 	
 	public int getCountersSize() {
 		return counters.size();
+	}
+	
+	public int getStringVarSize() {
+		return stringVars.size();
 	}
 	
 	// returns the name of the story
@@ -193,6 +204,10 @@ public class ModelStory implements Serializable {
 	
 	public ModelCounter getCounter(int index) {
 		return counters.get(index);
+	}
+	
+	public ModelStringVar getStringVar(int index) {
+		return stringVars.get(index);
 	}
 	
 	public DefaultListModel<String> getActorList() {
@@ -275,6 +290,36 @@ public class ModelStory implements Serializable {
 			counterList.addElement(counters.get(i).getName());
 		}
 		return counterList;
+	}
+
+	public DefaultListModel<String> getStringVarList() {
+		DefaultListModel<String> stringVarList = new DefaultListModel<String>();
+		for (int i = 0; i < stringVars.size(); ++i) {
+			stringVarList.addElement(stringVars.get(i).getName());
+		}
+		return stringVarList;
+	}
+	
+	public DefaultComboBoxModel<String> getStringVarBoxList() {
+		DefaultComboBoxModel<String> stringVarList = new DefaultComboBoxModel<String>();
+		for (int i = 0; i < stringVars.size(); ++i) {
+			stringVarList.addElement(stringVars.get(i).getName());
+		}
+		return stringVarList;
+	}
+	
+	public DefaultComboBoxModel<String> getSwitchCounterStringBoxList() {
+		DefaultComboBoxModel<String> comboList = new DefaultComboBoxModel<String>();
+		for (int i = 0; i < switches.size(); ++i) {
+			comboList.addElement(switches.get(i).getName());
+		}
+		for (int i = 0; i < counters.size(); ++i) {
+			comboList.addElement(counters.get(i).getName());
+		}
+		for (int i = 0; i < stringVars.size(); ++i) {
+			comboList.addElement(stringVars.get(i).getName());
+		}
+		return comboList;
 	}
 	
 	public DefaultComboBoxModel<String> getExploreBoxList() {
